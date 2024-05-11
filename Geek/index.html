@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif !important;
+      }
+      .text-ownPrimary {
+        color: #754ffe !important;
+      }
+      .bg-ownPrimary {
+        background-color: #754ffe !important;
+      }
+
+      .button {
+        padding: 8px 14px;
+        background-color: #754ffe;
+        color: white;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+      .outline {
+        background-color: transparent;
+        color: #754ffe;
+        border: 1px solid #754ffe;
+      }
+      .outline:hover {
+        background-color: #754ffe;
+        color: white;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .course-link {
+        position: relative;
+        transition: all 0.3s linear;
+      }
+
+      .course-link::before {
+        content: "";
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 190%;
+        opacity: 0;
+        background-color: #754ffe;
+      }
+      .course-link.active {
+        color: #754ffe !important;
+      }
+      .course-link.active::before {
+        opacity: 1;
+      }
+      .course-link:hover::before {
+        opacity: 1;
+      }
+
+      .course-link:hover {
+        color: #754ffe !important;
+      }
+      .swiper-button:hover {
+        background-color: #754ffe !important;
+        color: white;
+      }
+      .hero-section-container {
+        height: 100vh;
+      }
+      .hero-section-title {
+        font-size: 50px;
+      }
+      .review-container {
+        padding: 0 100px;
+      }
+      .instructor-container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+      .instructor-content {
+        width: 50%;
+      }
+      .review-left {
+        width: 50%;
+      }
+      @media (max-width: 768px) {
+        .review-left {
+          width: 65%;
+        }
+        .instructor-content {
+          width: 100%;
+        }
+        .hero-section-container {
+          height: 100%;
+        }
+        .review-container {
+          padding: 0;
+        }
+        .instructor-container {
+          padding: 40px 30px;
+        }
+        .second-box {
+          border-right: 0 !important;
+        }
+      }
+      @media (max-width: 1024px) {
+        .hero-section-title {
+          font-size: 35px;
+        }
+      }
+      @media (max-width: 426px) {
+        .second-box,
+        .first-box,
+        .third-box,
+        .fourth-box {
+          border-top-width: 0 !important;
+          border-left-width: 0 !important;
+          border-right-width: 0 !important;
+        }
+        .review-left {
+          width: 100%;
+        }
+        .girl {
+          width: 290px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div>
+      <nav class="navbar shadow-sm navbar-expand-lg">
+        <div class="container-fluid px-4">
+          <div class="d-flex">
+            <div class="navbar-brand">
+              <img
+                src="https://geeksui.codescandy.com/geeks/assets/images/brand/logo/logo.svg"
+                alt=""
+              />
+            </div>
+            <button
+              class="btn d-none d-sm-flex py-2 px-3 d-flex gap-2 align-items-center fs-6 text-ownPrimary fw-semibold"
+              style="background-color: #eeeafe"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M9.615 18.5v-1H20v1zm0-6v-1H20v1zm0-6v-1H20v1zM5.327 19.327q-.547 0-.937-.39T4 18t.39-.937q.39-.39.937-.39t.937.39q.39.39.39.937t-.39.937q-.39.39-.937.39m0-6q-.547 0-.937-.39T4 12t.39-.937q.39-.39.937-.39t.937.39q.39.39.39.937t-.39.937q-.39.39-.937.39m0-6q-.547 0-.937-.39T4 6t.39-.937q.39-.39.937-.39t.937.39q.39.39.39.937t-.39.937q-.39.39-.937.39"
+                />
+              </svg>
+              <p class="mb-0">Category</p>
+            </button>
+          </div>
+          <div class="d-flex gap-2 d-lg-none">
+            <div class="d-flex gap-2">
+              <div
+                class="rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px; background-color: #f1f5f9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11.5 5.423V2.038h1v3.385zm5.496 2.289l-.683-.683l2.358-2.452l.727.733zm1.58 4.788v-1h3.386v1zM11.5 21.962v-3.366h1v3.366zM7.042 7.68L4.577 5.329l.752-.708L7.73 7.004zm11.623 11.742l-2.352-2.452l.677-.658l2.389 2.347zM2.038 12.5v-1h3.385v1zm3.272 6.923l-.689-.752l2.358-2.358l.36.349l.378.353zM12.005 17q-2.082 0-3.543-1.457Q7 14.086 7 12.005q0-2.082 1.457-3.543Q9.914 7 11.995 7q2.082 0 3.543 1.457Q17 9.914 17 11.995q0 2.082-1.457 3.543Q14.086 17 12.005 17"
+                  />
+                </svg>
+              </div>
+              <div
+                class="rounded-circle d-none d-sm-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px; background-color: #f1f5f9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11 6H9q-.425 0-.712-.288T8 5q0-.425.288-.712T9 4h2V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2h2q.425 0 .713.288T16 5q0 .425-.288.713T15 6h-2v2q0 .425-.288.713T12 9q-.425 0-.712-.288T11 8zM7 22q-.825 0-1.412-.587T5 20q0-.825.588-1.412T7 18q.825 0 1.413.588T9 20q0 .825-.587 1.413T7 22m10 0q-.825 0-1.412-.587T15 20q0-.825.588-1.412T17 18q.825 0 1.413.588T19 20q0 .825-.587 1.413T17 22M3 4H2q-.425 0-.712-.288T1 3q0-.425.288-.712T2 2h1.65q.275 0 .525.15t.375.425L8.525 11h7l3.625-6.5q.125-.25.35-.375T20 4q.575 0 .863.488t.012.987L17.3 11.95q-.275.5-.737.775T15.55 13H8.1L7 15h11q.425 0 .713.288T19 16q0 .425-.288.713T18 17H7q-1.125 0-1.713-.975T5.25 14.05L6.6 11.6z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div
+            class="collapse navbar-collapse"
+            style="flex-grow: 0"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav gap-4">
+              <li class="nav-item">
+                <a href="" class="nav-link text-black d-none d-lg-block"
+                  >Landing</a
+                >
+                <div
+                  class="border-bottom d-lg-none pb-3 d-flex mt-3 justify-content-between"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#Landing"
+                >
+                  <p class="mb-0">Landing</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4z"
+                    />
+                  </svg>
+                </div>
+                <div class="collapse" id="Landing">
+                  <ul
+                    style="list-style: none"
+                    class="d-flex mt-3 flex-column gap-2"
+                  >
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                    <li>Landing</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-black">Pages</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-black">Accounts</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-black">Mega Menu</a>
+              </li>
+            </ul>
+            <div class="d-flex gap-2">
+              <div
+                class="rounded-circle d-none d-lg-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px; background-color: #f1f5f9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11.5 5.423V2.038h1v3.385zm5.496 2.289l-.683-.683l2.358-2.452l.727.733zm1.58 4.788v-1h3.386v1zM11.5 21.962v-3.366h1v3.366zM7.042 7.68L4.577 5.329l.752-.708L7.73 7.004zm11.623 11.742l-2.352-2.452l.677-.658l2.389 2.347zM2.038 12.5v-1h3.385v1zm3.272 6.923l-.689-.752l2.358-2.358l.36.349l.378.353zM12.005 17q-2.082 0-3.543-1.457Q7 14.086 7 12.005q0-2.082 1.457-3.543Q9.914 7 11.995 7q2.082 0 3.543 1.457Q17 9.914 17 11.995q0 2.082-1.457 3.543Q14.086 17 12.005 17"
+                  />
+                </svg>
+              </div>
+              <div
+                class="rounded-circle d-none d-lg-flex justify-content-center align-items-center"
+                style="width: 40px; height: 40px; background-color: #f1f5f9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11 6H9q-.425 0-.712-.288T8 5q0-.425.288-.712T9 4h2V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2h2q.425 0 .713.288T16 5q0 .425-.288.713T15 6h-2v2q0 .425-.288.713T12 9q-.425 0-.712-.288T11 8zM7 22q-.825 0-1.412-.587T5 20q0-.825.588-1.412T7 18q.825 0 1.413.588T9 20q0 .825-.587 1.413T7 22m10 0q-.825 0-1.412-.587T15 20q0-.825.588-1.412T17 18q.825 0 1.413.588T19 20q0 .825-.587 1.413T17 22M3 4H2q-.425 0-.712-.288T1 3q0-.425.288-.712T2 2h1.65q.275 0 .525.15t.375.425L8.525 11h7l3.625-6.5q.125-.25.35-.375T20 4q.575 0 .863.488t.012.987L17.3 11.95q-.275.5-.737.775T15.55 13H8.1L7 15h11q.425 0 .713.288T19 16q0 .425-.288.713T18 17H7q-1.125 0-1.713-.975T5.25 14.05L6.6 11.6z"
+                  />
+                </svg>
+              </div>
+              <button class="button outline d-none d-lg-block">Sign in</button>
+              <button class="button outlin d-none d-lg-block">Sign up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- hero section -->
+    <div class="container hero-section-container">
+      <div class="row h-100 gap-lg-0 gap-5 align-items-center">
+        <!-- hero left -->
+        <div class="col-lg-6 col-12">
+          <div class="d-flex mt-lg-0 mt-5 gap-2 align-items-center">
+            <div
+              class="rounded-circle text-success d-flex align-items-center justify-content-center"
+              style="width: 20px; height: 20px; background-color: #d1f5ea"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275z"
+                />
+              </svg>
+            </div>
+            <p class="mb-0 fw-semibold" style="font-size: 14px">
+              Most trusted education platform
+            </p>
+          </div>
+          <h1 class="fw-bolder w-lg-75 w-100 mt-4 hero-section-title">
+            Grow your skills and advance career
+          </h1>
+          <p class="my-4 lh-lg" style="font-size: 15px; color: #64748b">
+            Start, switch, or advance your career with more than 5,000 courses,
+            Professional Certificates, and degrees from world-class universities
+            and companies.
+          </p>
+          <div class="d-flex gap-4">
+            <button class="button">Join Free Now</button>
+            <div class="d-flex gap-2 align-items-center">
+              <div
+                class="rounded-circle text-white border border-3 d-flex align-items-center justify-content-center"
+                style="
+                  width: 35px;
+                  height: 35px;
+                  background-color: #29baf9;
+                  border-color: #e1f6ff !important;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="38"
+                  height="38"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M9 15.713V8.287q0-.368.242-.588t.566-.22q.105 0 .214.028t.215.083l5.842 3.733q.186.13.28.298q.093.167.093.379t-.093.379q-.094.167-.28.298l-5.842 3.733q-.106.055-.215.083q-.109.028-.214.028q-.323 0-.566-.22Q9 16.081 9 15.713m1-.363L15.288 12L10 8.65z"
+                  />
+                </svg>
+              </div>
+              <p class="mb-0">Watch Demo</p>
+            </div>
+          </div>
+        </div>
+        <!-- hero right -->
+        <div class="col-lg-6 mb-5 col-12 d-flex justify-content-center">
+          <div class="position-relative">
+            <img
+              class="position-absolute d-none d-sm-block"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/target.svg"
+              alt=""
+              style="right: -130px; top: 250px"
+            />
+            <img
+              class="position-absolute d-none d-sm-block"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/sound.svg"
+              alt=""
+              style="left: -170px; top: 130px"
+            />
+            <img
+              class="position-absolute d-none d-sm-block"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/trophy.svg"
+              alt=""
+              style="top: 10px; left: -70px"
+            />
+            <img
+              class="position-absolute d-none d-sm-block"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/frame-2.svg"
+              alt=""
+              style="bottom: -50px; z-index: 20; left: -60px"
+            />
+            <img
+              class="position-absolute d-none d-sm-block"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/frame-1.svg"
+              alt=""
+              style="top: 6px; left: 80%; z-index: 10"
+            />
+            <img
+              class="position-absolute girl"
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/girl-image.png"
+              alt=""
+              style="right: 0px; bottom: 0px; z-index: 10"
+            />
+            <img
+              src="https://geeksui.codescandy.com/geeks/assets/images/background/acedamy-img/bg-thumb.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- intro -->
+    <div class="container" style="margin-bottom: 200px">
+      <div class="row">
+        <div
+          class="col-lg-3 first-box col-md-6 border border-start-0 py-5 text-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="38"
+            style="color: #0ea5e9"
+            height="38"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M5 8.999c0 1.902.765 3.627 2 4.89V21a.998.998 0 0 0 1.447.895L12 20.118l3.553 1.776a.992.992 0 0 0 .972-.043c.295-.183.475-.504.475-.851v-7.11a6.976 6.976 0 0 0 2-4.891C19 5.14 15.86 2 12 2S5 5.14 5 8.999m7.447 9.106a1 1 0 0 0-.895 0L9 19.382v-4.067c.911.434 1.926.685 3 .685s2.089-.25 3-.685v4.066zM12 4c2.756 0 5 2.242 5 4.999A5.006 5.006 0 0 1 12 14c-2.757 0-5-2.243-5-5.001A5.005 5.005 0 0 1 12 4"
+            />
+          </svg>
+          <p class="fw-bold fs-4 mb-0 mt-3">316,000+</p>
+          <p style="color: #64748b; font-size: 14px">Qualified Instructor</p>
+        </div>
+        <div
+          class="col-lg-3 second-box col-md-6 border border-start-0 py-5 text-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="38"
+            height="38"
+            style="color: #f59e0b"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 20c0-1.742-1.67-3.223-4-3.773M15 20c0-2.21-2.686-4-6-4s-6 1.79-6 4m12-7a4 4 0 0 0 0-8m-6 8a4 4 0 1 1 0-8a4 4 0 0 1 0 8"
+            />
+          </svg>
+          <p class="fw-bold fs-4 mb-0 mt-3">1.8 Billion+</p>
+          <p style="color: #64748b; font-size: 14px">Course enrolments</p>
+        </div>
+        <div
+          class="col-lg-3 third-box col-md-6 border border-start-0 py-5 text-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="38"
+            height="38"
+            style="color: #754ffe"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm13-6l-4 4l-4-4"
+            />
+          </svg>
+          <p class="fw-bold fs-4 mb-0 mt-3">41,000+</p>
+          <p style="color: #64748b; font-size: 14px">Courses in 42 languages</p>
+        </div>
+        <div
+          class="col-lg-3 fourth-box col-md-6 border border-start-0 border-end-0 py-5 text-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="38"
+            height="38"
+            style="color: #38a169"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="M216 36H40a20 20 0 0 0-20 20v144a20 20 0 0 0 20 20h176a20 20 0 0 0 20-20V56a20 20 0 0 0-20-20M44 100h72v56H44Zm96-24V60h24v16Zm-24 0H92V60h24Zm0 104v16H92v-16Zm24 0h24v16h-24Zm0-24v-56h72v56Zm72-80h-24V60h24ZM68 60v16H44V60ZM44 180h24v16H44Zm144 16v-16h24v16Z"
+            />
+          </svg>
+          <p class="fw-bold fs-4 mb-0 mt-3">179,000+</p>
+          <p style="color: #64748b; font-size: 14px">Online Videos</p>
+        </div>
+      </div>
+    </div>
+    <!-- course section -->
+    <div class="container">
+      <h1 class="fs-2 fw-bold">Most Popular Courses</h1>
+      <p class="pt-2" style="color: #64748b">
+        These are the most popular courses among Geeks Courses learners
+        worldwide in year 2022
+      </p>
+      <div
+        class="rounded-3 py-3 mt-5 overflow-auto"
+        style="background-color: #e2e8f0"
+      >
+        <ul class="d-flex gap-5 mb-0" style="list-style: none">
+          <li>
+            <a
+              href=""
+              class="text-decoration-none course-link active"
+              style="color: #647f9e"
+              >Development</a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="text-decoration-none course-link"
+              style="color: #647f9e"
+              >Design</a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="text-decoration-none course-link"
+              style="color: #647f9e"
+              >Marketing</a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="text-decoration-none course-link"
+              style="color: #647f9e"
+              >Business</a
+            >
+          </li>
+          <li>
+            <a
+              href=""
+              class="text-decoration-none course-link"
+              style="color: #647f9e"
+              >Health</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="row m-0 mt-5 g-4">
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!--  -->
+          <div class="overflow-hidden border rounded-3">
+            <img
+              class="w-100"
+              src="https://geeksui.codescandy.com/geeks/assets/images/course/course-javascript.jpg"
+              alt=""
+            />
+            <div class="py-4 px-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <div
+                  class="rounded-2 px-2 fw-medium"
+                  style="
+                    background-color: #e6f6fd;
+                    font-size: 14px;
+                    color: #85baec;
+                  "
+                >
+                  Intermediate
+                </div>
+                <svg
+                  style="color: #754ffe"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 4.529a5.998 5.998 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a3.998 3.998 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454"
+                  />
+                </svg>
+              </div>
+              <p class="fw-bold py-3 mb-0">
+                How to easily create a website with JavaScript
+              </p>
+              <p class="mb-4 text-secondary" style="font-size: 14px">
+                By: Claire Evans
+              </p>
+              <div class="d-flex gap-1 align-items-center">
+                <div class="d-flex">
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                  <svg
+                    style="color: #f59e0b"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                    />
+                  </svg>
+                </div>
+                <p class="mb-0" style="color: #f59e0b; font-size: 14px">4.5</p>
+                <p class="text-secondary mb-0" style="font-size: 14px">
+                  (9,300)
+                </p>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="w-100 border-top"></div>
+            <div
+              class="px-3 py-3 d-flex align-items-center justify-content-between"
+            >
+              <p class="mb-0 fw-bold">$39.00</p>
+              <div class="d-flex gap-2 align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  style="color: #754ffe"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M96 216a16 16 0 1 1-16-16a16 16 0 0 1 16 16m88-16a16 16 0 1 0 16 16a16 16 0 0 0-16-16m47.65-125.65l-28.53 92.71A23.89 23.89 0 0 1 180.18 184H84.07A24.11 24.11 0 0 1 61 166.59L24.82 40H8a8 8 0 0 1 0-16h16.82a16.08 16.08 0 0 1 15.39 11.6L48.32 64H224a8 8 0 0 1 7.65 10.35M213.17 80H52.89l23.49 82.2a8 8 0 0 0 7.69 5.8h96.11a8 8 0 0 0 7.65-5.65Z"
+                  />
+                </svg>
+                <p class="mb-0" style="font-size: 16px">Get Enrolled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- instructor -->
+    <div class="container mb-5">
+      <div
+        class="bg-ownPrimary position-relative instructor-container rounded-2"
+        style="margin-top: 120px"
+      >
+        <img
+          class="position-absolute bottom-0 d-lg-block d-none"
+          style="left: 25%; transform: translateX(-50%)"
+          src="https://geeksui.codescandy.com/geeks/assets/images/png/cta-instructor-1.png"
+          alt=""
+        />
+        <img
+          class="position-absolute d-lg-block d-none"
+          style="bottom: 15%; left: 6%"
+          src="https://geeksui.codescandy.com/geeks/assets/images/svg/dollor.svg"
+          alt=""
+        />
+        <img
+          class="position-absolute d-lg-block d-none"
+          style="top: 3px; left: 35%"
+          src="https://geeksui.codescandy.com/geeks/assets/images/svg/graph.svg"
+          alt=""
+        />
+        <div class="instructor-content ms-auto">
+          <p class="fs-3 fw-bold text-white">Become an instructor today</p>
+          <p class="text-white">
+            Instructors from around the world teach millions of students on
+            Geeks. We provide the tools and skills to teach what you love.
+          </p>
+          <button class="button" style="background-color: white; color: black">
+            Start Teaching Today
+          </button>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: #e2e8f0" class="pt-5 pb-4">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap review-container justify-content-between align-items-center"
+        >
+          <div class="review-left">
+            <div class="d-flex gap-3 align-items-center">
+              <p class="mb-0 fw-semibold">4.5/5.0</p>
+              <div class="d-flex align-items-center">
+                <svg
+                  style="color: #f59e0b"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                  />
+                </svg>
+                <svg
+                  style="color: #f59e0b"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                  />
+                </svg>
+                <svg
+                  style="color: #f59e0b"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                  />
+                </svg>
+                <svg
+                  style="color: #f59e0b"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                  />
+                </svg>
+                <svg
+                  style="color: #f59e0b"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"
+                  />
+                </svg>
+                <p class="mb-0" style="color: #f59e0b">5</p>
+              </div>
+              <p class="mb-0 text-secondary">(Based on 3265 ratings)</p>
+            </div>
+            <h1 class="fs-2 py-3">What our customers say</h1>
+            <p class="text-secondary">
+              Hear from teachers , trainers , and leaders in the learning space
+              about how Geeks empowers them to provide quality online learning
+              experiences.
+            </p>
+          </div>
+          <div>
+            <button class="button">View Reviews</button>
+          </div>
+        </div>
+        <div class="row gap-3 mt-5">
+          <div class="col bg-white rounded-3 py-5 px-5">
+            <img
+              class="rounded-circle d-block mx-auto"
+              style="width: 50px; height: 50px"
+              src="https://geeksui.codescandy.com/geeks/assets/images/avatar/avatar-3.jpg"
+              alt=""
+            />
+            <p class="text-secondary text-center py-3" style="font-size: 15px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatem obcaecati ex corrupti temporibus officiis impedit
+              animi. Minus quo fuga obcaecati!
+            </p>
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="color: #f59e0b"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <p class="mb-0" style="font-size: 15px">3.5</p>
+            </div>
+            <p class="fw-bold text-center pt-3 mb-0">Leigh F. Keller</p>
+            <p class="text-secondary text-center" style="font-size: 15px">
+              Software Engineer at Palantir
+            </p>
+          </div>
+          <div class="col d-lg-block d-none bg-white rounded-3 py-5 px-5">
+            <img
+              class="rounded-circle d-block mx-auto"
+              style="width: 50px; height: 50px"
+              src="https://geeksui.codescandy.com/geeks/assets/images/avatar/avatar-3.jpg"
+              alt=""
+            />
+            <p class="text-secondary text-center py-3" style="font-size: 15px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatem obcaecati ex corrupti temporibus officiis impedit
+              animi. Minus quo fuga obcaecati!
+            </p>
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="color: #f59e0b"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <p class="mb-0" style="font-size: 15px">3.5</p>
+            </div>
+            <p class="fw-bold text-center pt-3 mb-0">Leigh F. Keller</p>
+            <p class="text-secondary text-center" style="font-size: 15px">
+              Software Engineer at Palantir
+            </p>
+          </div>
+          <div class="col d-lg-block d-none bg-white rounded-3 py-5 px-5">
+            <img
+              class="rounded-circle d-block mx-auto"
+              style="width: 50px; height: 50px"
+              src="https://geeksui.codescandy.com/geeks/assets/images/avatar/avatar-3.jpg"
+              alt=""
+            />
+            <p class="text-secondary text-center py-3" style="font-size: 15px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatem obcaecati ex corrupti temporibus officiis impedit
+              animi. Minus quo fuga obcaecati!
+            </p>
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="color: #f59e0b"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188q-.25-.175-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6q.1-.275.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475q.3 0 .563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487q.1.275.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475q-.25.175-.575.188t-.6-.213z"
+                />
+              </svg>
+              <p class="mb-0" style="font-size: 15px">3.5</p>
+            </div>
+            <p class="fw-bold text-center pt-3 mb-0">Leigh F. Keller</p>
+            <p class="text-secondary text-center" style="font-size: 15px">
+              Software Engineer at Palantir
+            </p>
+          </div>
+        </div>
+        <div class="d-flex gap-3 justify-content-center mt-4">
+          <div
+            class="swiper-button rounded-circle d-flex align-items-center justify-content-center"
+            style="
+              width: 40px;
+              height: 40px;
+              background-color: white;
+              cursor: pointer;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="m14 18l-6-6l6-6l1.4 1.4l-4.6 4.6l4.6 4.6z"
+              />
+            </svg>
+          </div>
+          <div
+            class="swiper-button rounded-circle d-flex align-items-center justify-content-center"
+            style="
+              width: 40px;
+              height: 40px;
+              background-color: white;
+              cursor: pointer;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="container">
+      <div class="row gap-sm-0 row-gap-4" style="padding: 70px 0">
+        <div class="col-lg-5 col-md-6 col-12">
+          <img
+            src="https://geeksui.codescandy.com/geeks/assets/images/brand/logo/logo.svg"
+            alt=""
+          />
+          <p class="text-secondary mb-0 py-4" style="font-size: 15px">
+            Geek is feature-rich components and beautifully Bootstrap UIKit for
+            developers, built with bootstrap responsive framework.
+          </p>
+          <div class="d-flex gap-2" style="color: #754ffe">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h1 class="fw-bolder" style="font-size: 16px">Company</h1>
+          <ul
+            class="ps-0 d-flex gap-2 flex-column mt-4"
+            style="list-style: none; font-size: 14px"
+          >
+            <li>
+              <a href="" class="text-black">About</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Pricing</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Blog</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Careers</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h1 class="fw-bolder" style="font-size: 16px">Support</h1>
+          <ul
+            class="ps-0 d-flex gap-2 flex-column mt-4"
+            style="list-style: none; font-size: 14px"
+          >
+            <li>
+              <a href="" class="text-black">Help and Support</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Become Instructor</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Get The App</a>
+            </li>
+            <li>
+              <a href="" class="text-black">FAQ's</a>
+            </li>
+            <li>
+              <a href="" class="text-black">Tutorials</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12" style="font-size: 14px">
+          <h1 class="fw-bolder" style="font-size: 16px">Get In Touch</h1>
+          <p class="mt-4">339 McDermott Points Hettingerhaven, NV 15283</p>
+          <p class="mb-0">
+            Email: <span style="color: #754ffe">support@geekui.com</span>
+          </p>
+          <p>Phone: <span class="fw-bolder">(000) 123 456 789</span></p>
+          <div class="d-flex gap-2">
+            <img
+              src="https://geeksui.codescandy.com/geeks/assets/images/svg/appstore.svg"
+              style="width: 140px; height: 40px"
+              alt=""
+            />
+            <img
+              src="https://geeksui.codescandy.com/geeks/assets/images/svg/playstore.svg"
+              alt=""
+              style="width: 140px; height: 40px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
